@@ -6,13 +6,16 @@ const multer = require('multer')
 const path = require('path')
 const fs = require('fs')
 const User = require('./models/user')
-const { error } = require('console')
 
 const app = express()
 
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }))
+
+app.get('/',(req,res)=>{
+  res.send('<h1>Server is Live</h1>')
+})
 
 // mongoose connection
 mongoose.connect('mongodb+srv://kalai6464:kalai6464@cluster0.suros08.mongodb.net/form', {
