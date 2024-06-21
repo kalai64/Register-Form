@@ -10,7 +10,7 @@ function User() {
 
   const getUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/users');
+      const response = await axios.get('https://register-form-eoki.onrender.com/users');
       setUsers(response.data);
     } catch (error) {
       console.error(error);
@@ -23,7 +23,7 @@ function User() {
 
   const openPDF = async (filename) => {
     try {
-      const response = await axios.get(`http://localhost:8000/files/${filename}`, {
+      const response = await axios.get(`https://register-form-eoki.onrender.com/files/${filename}`, {
         responseType: 'blob',
       });
 
@@ -38,7 +38,7 @@ function User() {
 
   const deleteData = async(id) =>{
     try {
-      await axios.delete('http://localhost:8000/deleteData/'+id)
+      await axios.delete('https://register-form-eoki.onrender.com/deleteData/'+id)
       .then(result=> { console.log(result)
         window.location.reload()
       })

@@ -75,7 +75,7 @@ function Add() {
         formData.append(key, values[key]);
       }
       try {
-        const result = await axios.post('http://localhost:8000/createUser', formData, {
+        const result = await axios.post('https://register-form-eoki.onrender.com/createUser', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
